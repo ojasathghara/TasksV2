@@ -24,7 +24,26 @@ function Todos(props) {
 
     const handleModalShow = () => setModalShow(true);
     const handleModalClose = () => setModalShow(false);
-    const handleModalSubmit = () => setModalShow(false);
+
+    const handleModalSubmit = (newTitle, newDescription) => {
+        if (!newTitle || !newDescription) {
+            alert("Title or description must not be empty.");
+            return;
+        }
+
+        let todoIdx = todos.indexOf(currentTodo);
+        let tempTodos = [...todos];
+
+        if (!tempTodos[todoIdx].active) {
+            tempTodos[todoIdx].active = true;
+        }
+        tempTodos[todoIdx].title = newTitle;
+        tempTodos[todoIdx].description = newDescription;
+
+        setTodos(tempTodos);
+
+        setModalShow(false);
+    };
 
     const editTodo = (todo) => {
         setCurrentTodo(todo);

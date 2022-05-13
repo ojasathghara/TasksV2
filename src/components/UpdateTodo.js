@@ -65,7 +65,10 @@ function UpdateTodo(props) {
                     <Button variant="secondary" onClick={props.onClose}>
                         Cancel
                     </Button>
-                    <Button variant="primary" onClick={props.handleSubmit}>
+                    <Button
+                        variant="primary"
+                        onClick={() => props.onSubmit(newTitle, newDescription)}
+                    >
                         Update
                     </Button>
                 </Modal.Footer>
@@ -78,8 +81,7 @@ UpdateTodo.propTypes = {
     show: PropTypes.bool,
     onHide: PropTypes.func,
     onClose: PropTypes.func,
-    handleClose: PropTypes.func,
-    handleSubmit: PropTypes.func,
+    onSubmit: PropTypes.func,
 };
 
 export default UpdateTodo;
