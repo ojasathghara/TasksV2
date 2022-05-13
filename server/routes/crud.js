@@ -1,42 +1,38 @@
-const TodoItem = require("../../models/TodoItem");
 const { Router } = require("express");
+const crudService = require("../services/crud");
 
 let crudRouter = Router();
 
-let todos = [];
-
 crudRouter.get("/read", (req, res) => {
-    res.send(JSON.stringify(todos));
+    res.send(crudService.getTodos());
 });
 
 crudRouter.post("/add", (req, res) => {
-    let newTodo = new TodoItem(req.body.title, req.body.description);
-    todos.push(newTodo);
+    console.log(req.body);
+    let title = req.body.title;
+    let description = req.body.description;
 
-    res.send(todos);
+    let status = crudService.addTodo(title, description);
+    // res.redirect("/");
+    res.send(status);
 });
 
 crudRouter.post("/update/:key", (req, res) => {
-    let todo = todos.filter((todo) => {
-        return (todo.key = req.params.key);
-    })[0];
+    let key = parseInt(req.params.key);
+    let title = req.body.title;
+    let description = req.body.description;
+    let active = req.body.active;
 
-    todo.title = req.body.title;
-    todo.description = req.body.description;
-    todo.active = req.body.active;
-
-    res.send(todo);
+    let status = crudService.updateTodo(key, title, description, active);
+    // res.redirect("/");
+    res.send(status);
 });
 
 crudRouter.post("/delete/:key", (req, res) => {
-    let todo = todos.filter((todo) => {
-        return (todo.key = req.params.key);
-    })[0];
-
-    let idx = todos.indexOf(todo);
-    todos.splice(idx, 1);
-
-    res.send(todos);
+    let key = parseInt(req.params.key);
+    let status = crudService.deleteTodo(key);
+    // res.redirect("/");
+    res.send(status);
 });
 
 module.exports = crudRouter;
