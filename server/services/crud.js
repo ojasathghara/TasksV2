@@ -47,10 +47,23 @@ const updateTodo = (key, title, description, active) => {
 
     todos[todoItemIdx].title = title;
     todos[todoItemIdx].description = description;
-    todos[todoItemIdx].active = active;
     setTodos();
 
     return `Success: Todo with key ${key} updated.`;
+};
+
+const toggleTodo = (key) => {
+    initTodos();
+
+    let todoItemIdx = findTodoIdx(key);
+    if (todoItemIdx === -1) {
+        return "Error: cannot find the required todo. Make sure you have requested the correct key.";
+    }
+
+    todos[todoItemIdx].active = !todos[todoItemIdx].active;
+    setTodos();
+
+    return `Success: Todo with key ${key} toggled.`;
 };
 
 const deleteTodo = (key) => {
@@ -67,4 +80,4 @@ const deleteTodo = (key) => {
     return `Success: Todo with key ${key} deleted.`;
 };
 
-module.exports = { getTodos, addTodo, updateTodo, deleteTodo };
+module.exports = { getTodos, addTodo, updateTodo, toggleTodo, deleteTodo };

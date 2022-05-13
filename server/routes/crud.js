@@ -21,9 +21,15 @@ crudRouter.post("/update/:key", (req, res) => {
     let key = parseInt(req.params.key);
     let title = req.body.title;
     let description = req.body.description;
-    let active = req.body.active;
 
-    let status = crudService.updateTodo(key, title, description, active);
+    let status = crudService.updateTodo(key, title, description);
+    // res.redirect("/");
+    res.send(status);
+});
+
+crudRouter.post("/toggle/:key", (req, res) => {
+    let key = parseInt(req.params.key);
+    let status = crudService.toggleTodo(key);
     // res.redirect("/");
     res.send(status);
 });
