@@ -18,12 +18,18 @@ let globalKey = 3;
 
 function Todos(props) {
     const [todos, setTodos] = useState(todosUtil);
+    const [currentTodo, setCurrentTodo] = useState({ key: -1 }); // setting a default key for the first mount
 
     const [modalShow, setModalShow] = useState(false);
 
     const handleModalShow = () => setModalShow(true);
     const handleModalClose = () => setModalShow(false);
     const handleModalSubmit = () => setModalShow(false);
+
+    const editTodo = (todo) => {
+        setCurrentTodo(todo);
+        setModalShow(true);
+    };
 
     const addTodo = (title, description) => {
         let newTodo = {
@@ -58,9 +64,12 @@ function Todos(props) {
         <div className="container my-5">
             <AddTodo onAdd={addTodo} />
             <UpdateTodo
+                key={currentTodo.key} // to remount the modal
                 show={modalShow}
+                todo={currentTodo}
                 onShow={handleModalShow}
                 onHide={handleModalClose}
+                onClose={handleModalClose}
                 onSubmit={handleModalSubmit}
             />
             <h3>My Tasks</h3>
@@ -73,7 +82,7 @@ function Todos(props) {
                             <div className="col-md-4" key={todo.key}>
                                 <TodoItem
                                     todo={todo}
-                                    showUpdateModal={handleModalShow}
+                                    onEdit={editTodo}
                                     onDelete={deleteTodo}
                                     onToggle={toggleTodo}
                                 />

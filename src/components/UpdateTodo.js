@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 
 function UpdateTodo(props) {
+    let oldTitle = "";
+    let oldDescription = "";
+
+    if (props.todo != null) {
+        oldTitle = props.todo.title;
+        oldDescription = props.todo.description;
+    }
+
+    const [newTitle, setNewTitle] = useState(oldTitle);
+    const [newDescription, setNewDescription] = useState(oldDescription);
+
+    const onTitleChange = (e) => {
+        setNewTitle(e.target.value);
+    };
+
+    const onDescriptionChange = (e) => {
+        setNewDescription(e.target.value);
+    };
+
     return (
         <div>
             <Modal
@@ -16,30 +35,34 @@ function UpdateTodo(props) {
                 <Modal.Body>
                     <form>
                         <div className="form-group">
-                            <label htmlFor="title">New Title</label>
+                            <label htmlFor="todoTitleUpdate">New Title</label>
                             <input
                                 type="text"
                                 className="form-control"
-                                id="title"
-                                name="title"
-                                placeholder="Enter title"
+                                id="todoTitleUpdate"
+                                name="todoTitleUpdate"
+                                value={newTitle}
+                                onChange={onTitleChange}
                             />
                         </div>
                         <br />
                         <div className="form-group">
-                            <label htmlFor="description">New Description</label>
+                            <label htmlFor="todoDescriptionUpdate">
+                                New Description
+                            </label>
                             <input
-                                type="password"
+                                type="text"
                                 className="form-control"
-                                id="description"
-                                name="description"
-                                placeholder="Enter a description"
+                                id="todoDescriptionUpdate"
+                                name="todoDescriptionUpdate"
+                                value={newDescription}
+                                onChange={onDescriptionChange}
                             />
                         </div>
                     </form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={props.handleClose}>
+                    <Button variant="secondary" onClick={props.onClose}>
                         Cancel
                     </Button>
                     <Button variant="primary" onClick={props.handleSubmit}>
@@ -54,6 +77,7 @@ function UpdateTodo(props) {
 UpdateTodo.propTypes = {
     show: PropTypes.bool,
     onHide: PropTypes.func,
+    onClose: PropTypes.func,
     handleClose: PropTypes.func,
     handleSubmit: PropTypes.func,
 };

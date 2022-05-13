@@ -27,7 +27,10 @@ function TodoItem(props) {
                 </p>
                 <hr />
                 <div className="d-flex justify-content-between">
-                    <Button variant="primary" onClick={props.showUpdateModal}>
+                    <Button
+                        variant="primary"
+                        onClick={() => props.onEdit(props.todo)}
+                    >
                         Edit
                     </Button>
                     <Button
@@ -50,7 +53,7 @@ function TodoItem(props) {
 
 TodoItem.propTypes = {
     todo: PropTypes.object,
-    showUpdateModal: PropTypes.func,
+    onEdit: PropTypes.func,
     onDelete: PropTypes.func,
     onToggle: PropTypes.func,
 };
