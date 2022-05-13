@@ -1,6 +1,7 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 import PropTypes from "prop-types";
+import UpdateTodo from "./UpdateTodo";
 
 let todos = [
     { key: 1, title: "Hello", description: "Hello description", active: true },
@@ -30,6 +31,7 @@ let todos = [
 function Todos(props) {
     return (
         <div className="container my-5">
+            <UpdateTodo />
             <h3>My Tasks</h3>
             <hr />
             <div className="row">
