@@ -1,21 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 
 function UpdateTodo(props) {
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    const handleSubmit = () => setShow(false);
-
     return (
         <div>
-            <Button variant="primary" onClick={handleShow}>
-                Launch demo modal
-            </Button>
-
-            <Modal show={show} onHide={handleClose}>
+            <Modal
+                show={props.show}
+                onShow={props.onShow}
+                onHide={props.onHide}
+            >
                 <Modal.Header closeButton>
                     <Modal.Title>Update Task</Modal.Title>
                 </Modal.Header>
@@ -45,10 +39,10 @@ function UpdateTodo(props) {
                     </form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button variant="secondary" onClick={props.handleClose}>
                         Cancel
                     </Button>
-                    <Button variant="primary" onClick={handleSubmit}>
+                    <Button variant="primary" onClick={props.handleSubmit}>
                         Update
                     </Button>
                 </Modal.Footer>
@@ -57,6 +51,11 @@ function UpdateTodo(props) {
     );
 }
 
-UpdateTodo.propTypes = {};
+UpdateTodo.propTypes = {
+    show: PropTypes.bool,
+    onHide: PropTypes.func,
+    handleClose: PropTypes.func,
+    handleSubmit: PropTypes.func,
+};
 
 export default UpdateTodo;

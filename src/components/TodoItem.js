@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 
 function TodoItem(props) {
@@ -6,7 +7,7 @@ function TodoItem(props) {
         textDecoration: "line-through",
     };
     return (
-        <div className="card">
+        <div className="card my-2">
             <div className="card-body">
                 <h5
                     className="card-title"
@@ -23,15 +24,13 @@ function TodoItem(props) {
                 </p>
                 <hr />
                 <div className="d-flex justify-content-between">
-                    <a href="/" className="btn btn-primary">
+                    <Button variant="primary" onClick={props.showUpdateModal}>
                         Edit
-                    </a>
-                    <a href="/" className="btn btn-success">
+                    </Button>
+                    <Button variant="success">
                         {props.todo.active ? "Mark as Done" : "Not done yet"}
-                    </a>
-                    <a href="/" className="btn btn-danger">
-                        Delete
-                    </a>
+                    </Button>
+                    <Button variant="danger">Delete</Button>
                 </div>
             </div>
         </div>
@@ -40,6 +39,7 @@ function TodoItem(props) {
 
 TodoItem.propTypes = {
     todo: PropTypes.object,
+    showUpdateModal: PropTypes.func,
 };
 
 export default TodoItem;
