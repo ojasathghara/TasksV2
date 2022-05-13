@@ -7,7 +7,7 @@ export default function AddTodo() {
             <hr />
             <form>
                 <div className="form-group">
-                    <label for="title">Title</label>
+                    <label htmlFor="title">Title</label>
                     <input
                         type="text"
                         className="form-control"
@@ -18,7 +18,7 @@ export default function AddTodo() {
                 </div>
                 <br />
                 <div className="form-group">
-                    <label for="description">Description</label>
+                    <label htmlFor="description">Description</label>
                     <input
                         type="password"
                         className="form-control"
