@@ -5,10 +5,21 @@ import Todos from "./components/Todos";
 import Navbar from "./components/Navbar";
 import About from "./components/static/About";
 
-let port = process.env.port || 16500;
-let local_url = `http://localhost:${port}`;
+let apiUrl = "";
 
 function App() {
+    switch (process.REACT_APP_BUILD) {
+        case "production":
+            apiUrl = "https://peaceful-island-64307.herokuapp.com";
+            break;
+
+        case "development":
+            apiUrl = "http://localhost:16500";
+            break;
+        default:
+            apiUrl = "";
+    }
+
     return (
         <div>
             <Router>
@@ -16,9 +27,7 @@ function App() {
                 <Routes>
                     <Route
                         path="/"
-                        element={
-                            <Todos pageTitle="Tasks" localhost={local_url} />
-                        }
+                        element={<Todos pageTitle="Tasks" apiUrl={apiUrl} />}
                     />
                     <Route
                         path="/about"

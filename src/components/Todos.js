@@ -6,7 +6,7 @@ import AddTodo from "./AddTodo";
 
 // let globalKey = 3;
 
-function Todos({ pageTitle, localhost }) {
+function Todos({ pageTitle, apiUrl }) {
     document.title = pageTitle;
 
     const [todos, setTodos] = useState([]);
@@ -19,7 +19,7 @@ function Todos({ pageTitle, localhost }) {
 
     //get the todos from api
     useEffect(() => {
-        let getTodosUrl = localhost + "/crud/read";
+        let getTodosUrl = apiUrl + "/crud/read";
         fetch(getTodosUrl)
             .then((resp) => resp.json())
             .then((data) => setTodos(data.todos));
@@ -32,7 +32,7 @@ function Todos({ pageTitle, localhost }) {
             return;
         }
 
-        let updateTodoUrl = localhost + `/crud/update/${key}`;
+        let updateTodoUrl = apiUrl + `/crud/update/${key}`;
 
         let formData = new FormData();
         formData.append("title", newTitle);
@@ -60,7 +60,7 @@ function Todos({ pageTitle, localhost }) {
     };
 
     const addTodo = (title, description) => {
-        let addTodosUrl = localhost + "/crud/add";
+        let addTodosUrl = apiUrl + "/crud/add";
 
         let formData = new FormData();
         formData.append("title", title);
@@ -75,7 +75,7 @@ function Todos({ pageTitle, localhost }) {
     };
 
     const toggleTodo = (key) => {
-        let toggledTodoUrl = localhost + `/crud/toggle/${key}`;
+        let toggledTodoUrl = apiUrl + `/crud/toggle/${key}`;
 
         fetch(toggledTodoUrl, { method: "POST" })
             .then((res) => res.json())
@@ -93,7 +93,7 @@ function Todos({ pageTitle, localhost }) {
     };
 
     const deleteTodo = (key) => {
-        let toggledTodoUrl = localhost + `/crud/delete/${key}`;
+        let toggledTodoUrl = apiUrl + `/crud/delete/${key}`;
 
         fetch(toggledTodoUrl, { method: "POST" })
             .then((res) => res.json())
