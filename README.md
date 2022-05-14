@@ -73,7 +73,7 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
     ```sh
-    git clone https://github.com/ojaswi825/tasks.git
+    git clone https://github.com/ojaswi825/TasksV2.git
     ```
 2. Install NPM packages
     ```sh
