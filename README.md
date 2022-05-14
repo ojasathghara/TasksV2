@@ -86,9 +86,15 @@ To get a local copy up and running follow these simple example steps.
     npm run build
     ```
 
-4. Run on localhost
+4. Run on localhost, this will start the server with react production build
+
     ```sh
     node server/server.js
+    ```
+
+5. You may want to run a react development server also, keep ther server running (Step) 4 and run below snippet to run a react development build
+    ```sh
+    npm run start
     ```
 
 ### Overview of Directory structure
