@@ -72,31 +72,34 @@ To get a local copy up and running follow these simple example steps.
 
 ### Installation
 
-1. Clone the repo
+1.  Clone the repo
     ```sh
     git clone https://github.com/ojaswi825/TasksV2.git
     ```
-2. Install NPM packages
+2.  Install NPM packages
     ```sh
     npm install
     ```
-3. You need to build the package to avoid express.js errors on browser
+3.  You need to build the package to avoid express.js errors on browser
 
     ```sh
     cd Tasks
     npm run build
     ```
 
-4. Run on localhost, this will start the server with react production build
+4.  Run on localhost, this will start the server with react production build
 
     ```sh
     node server/server.js
     ```
 
-5. You may want to run a react development server also, keep ther server running (Step) 4 and run below snippet to run a react development build
-    ```sh
-    npm run start
-    ```
+5.  You may want to run a react development server also, keep ther server running (Step) 4 and run below snippet to run a react development build
+
+    > Change the REACT_APP_BUILD=production in .env file to REACT_APP_BUILD=development to get the localhost api url and run:
+
+        ```sh
+        npm run start
+        ```
 
 ### Overview of Directory structure
 
