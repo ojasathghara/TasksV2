@@ -6,7 +6,7 @@
 <h3 align="center">Tasks</h3>
 
 <p align="center">
-    An app to manage and keep a track of you daily tasks
+    An app to manage and keep a track of your daily tasks
   </a>
 <br />
 </p>
@@ -38,7 +38,7 @@
 
 ## About The Project
 
-This application is made by Ojaswi Athghara using React JS as primary front-end framework, Express JS for REST apis and a back-end server and Bootstrap for faster development. 3rd party components have also been used to make the development process faster and easier.
+This application is made by Ojaswi Athghara using React JS as primary front-end framework, Express JS for the REST apis and a back-end server and Bootstrap for faster development. 3rd party components have also been used to make the development process faster and easier.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -61,22 +61,6 @@ This application is made by Ojaswi Athghara using React JS as primary front-end 
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
-
-### Overview of Directory structure
-
-#### The server/server.js is the entry point of our app that includes routes from routes folder.
-
-> server: <br/>
-> ├── models - <em>A directory to store our models</em> <br/>
-> │ └── TodoItem.js - <em>A todo model</em> <br/>
-> ├── routes - <em>A directory that contains routes</em> <br/>
-> │ ├── crud.js - <em>API routes are handled by this file</em> <br/>
-> │ ├── static.js - <em>Static file index.html is served by this file</em> <br/>
-> │ └── test.html - <em>Obsolete file</em> <br/>
-> ├── server.js - <em>Entry point of our app</em> <br/>
-> └── services - <em>The actual logic of the routes are implemented here</em> <br/> &emsp; └── crud.js - <em>This file handles the CRUD logic</em> <br/>
-
-> The public and build folders is same as react.
 
 ### Prerequisites
 
@@ -106,6 +90,22 @@ To get a local copy up and running follow these simple example steps.
     ```sh
     node server/server.js
     ```
+
+### Overview of Directory structure
+
+#### The server/server.js is the entry point of our app that includes routes from routes folder.
+
+> server: <br/>
+> ├── models - <em>A directory to store our models</em> <br/>
+> │ └── TodoItem.js - <em>A todo model</em> <br/>
+> ├── routes - <em>A directory that contains routes</em> <br/>
+> │ ├── crud.js - <em>API routes are handled by this file</em> <br/>
+> │ ├── static.js - <em>Static file index.html is served by this file</em> <br/>
+> │ └── test.html - <em>Obsolete file</em> <br/>
+> ├── server.js - <em>Entry point of our app</em> <br/>
+> └── services - <em>The actual logic of the routes are implemented here</em> <br/> &emsp; └── crud.js - <em>This file handles the CRUD logic</em> <br/>
+
+> The public and build folders is same as react.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
