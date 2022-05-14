@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+<h3 align="center">Tasks</h3>
 
-## Available Scripts
+<p align="center">
+    An to manage and keep a track of you daily tasks
+  </a>
+<br />
+</p>
+</div>
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#overview-of-directory-structure"> Overview of files</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-### `npm start`
+<!-- ABOUT THE PROJECT -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## About The Project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This application is made by Ojaswi Athghara using React JS as primary front-end framework, Express JS for REST apis and a back-end server and Bootstrap for faster development. 3rd party components have also been used to make the development process faster and easier.
 
-### `npm test`
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Built With
 
-### `npm run build`
+-   [React.js](https://reactjs.org/)
+-   [Bootstrap](https://getbootstrap.com)
+-   [JQuery](https://jquery.com)
+-   [React Bootstrap](https://react-bootstrap.github.io/)
+-   [React Router v6](https://reactrouter.com/docs/en/v6/getting-started/overview)
+-   [Express.js](https://expressjs.com/)
+-   [Body Parser](https://www.npmjs.com/package/body-parser)
+-   [CORS](https://www.npmjs.com/package/cors)
+-   [Multer](https://www.npmjs.com/package/multer)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- GETTING STARTED -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+To get a local copy up and running follow these simple example steps.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Overview of Directory structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### The server/server.js is the entry point of our app that includes routes from routes folder.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+> server: <br/>
+> ├── models - <em>A directory to store our models</em> <br/>
+> │ └── TodoItem.js - <em>A todo model</em> <br/>
+> ├── routes - <em>A directory that contains routes</em> <br/>
+> │ ├── crud.js - <em>API routes are handled by this file</em> <br/>
+> │ ├── static.js - <em>Static file index.html is served by this file</em> <br/>
+> │ └── test.html - <em>Obsolete file</em> <br/>
+> ├── server.js - <em>Entry point of our app</em> <br/>
+> └── services - <em>The actual logic of the routes are implemented here</em> <br/> &emsp; └── crud.js - <em>This file handles the CRUD logic</em> <br/>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+> The public and build folders is same as react.
 
-## Learn More
+### Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-   A good computer with Node JS 18.0 or higher and npm 8.8 or higher installed.
+-   A web browser.
+-   A Terminal app to execute commands.
+-   A code editor if you want to edit the source code.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Installation
 
-### Code Splitting
+1. Clone the repo
+    ```sh
+    git clone https://github.com/ojaswi825/tasks.git
+    ```
+2. Install NPM packages
+    ```sh
+    npm install
+    ```
+3. You need to build the package to avoid express.js errors on browser
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    ```sh
+    cd Tasks
+    npm run build
+    ```
 
-### Analyzing the Bundle Size
+4. Run on localhost
+    ```sh
+    node server/server.js
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Making a Progressive Web App
+<!-- CONTACT -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contact
 
-### Advanced Configuration
+Ojaswi Athghara - [LinkedIn](https://linkedin.com/in/ojaswi825) | [Email](ojaswi.athghara98@gmail.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Project Link: [Tasks Repo](https://github.com/ojaswi825/Tasks)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="right">(<a href="#top">back to top</a>)</p>
