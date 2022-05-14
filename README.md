@@ -6,7 +6,7 @@
 <h3 align="center">Tasks</h3>
 
 <p align="center">
-    An to manage and keep a track of you daily tasks
+    An app to manage and keep a track of you daily tasks
   </a>
 <br />
 </p>
