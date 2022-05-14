@@ -6,7 +6,9 @@ import AddTodo from "./AddTodo";
 
 // let globalKey = 3;
 
-function Todos({ localhost }) {
+function Todos({ pageTitle, localhost }) {
+    document.title = pageTitle;
+
     const [todos, setTodos] = useState([]);
     const [currentTodo, setCurrentTodo] = useState({ key: -1 }); // setting a default key for the first mount
 
@@ -148,7 +150,7 @@ function Todos({ localhost }) {
 
 Todos.propTypes = {
     todos: PropTypes.array,
-    title: PropTypes.string,
+    pageTitle: PropTypes.string,
 };
 
 export default Todos;

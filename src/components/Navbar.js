@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar(props) {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="/">
-                        App
-                    </a>
+                    <Link className="navbar-brand" to="/">
+                        Tasks
+                    </Link>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -25,22 +26,22 @@ function Navbar(props) {
                     >
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a
+                                <Link
                                     className="nav-link active"
                                     aria-current="page"
-                                    href="/"
+                                    to="/"
                                 >
                                     Home
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a
+                                <Link
                                     className="nav-link active"
                                     aria-current="page"
-                                    href="/"
+                                    to="/about"
                                 >
                                     About
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

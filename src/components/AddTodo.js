@@ -30,7 +30,7 @@ export default function AddTodo(props) {
 
     return (
         <div className="container my-5">
-            <h3>Add a todo</h3>
+            <h3>Add a new Task</h3>
             <hr />
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
