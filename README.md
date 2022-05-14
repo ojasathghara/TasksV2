@@ -7,7 +7,8 @@
 
 <p align="center">
     An app to manage and keep a track of your daily tasks
-  </a>
+    <br/>
+  <a href="https://peaceful-island-64307.herokuapp.com/">See the app in action here</a>
 <br />
 </p>
 </div>
