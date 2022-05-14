@@ -14,7 +14,7 @@ const setTodos = () => {
 
 const getTodos = () => {
     initTodos();
-    return todos;
+    return { todos: todos };
 };
 
 const addTodo = (title, description) => {
@@ -22,7 +22,7 @@ const addTodo = (title, description) => {
     let todoItem = new TodoItem(title, description);
     todos.push(todoItem);
     setTodos();
-    return "Success: Todo added.";
+    return { todo: todoItem };
 };
 
 const findTodoIdx = (key) => {
@@ -37,7 +37,7 @@ const findTodoIdx = (key) => {
     return idx;
 };
 
-const updateTodo = (key, title, description, active) => {
+const updateTodo = (key, title, description) => {
     initTodos();
 
     let todoItemIdx = findTodoIdx(key);
@@ -49,7 +49,7 @@ const updateTodo = (key, title, description, active) => {
     todos[todoItemIdx].description = description;
     setTodos();
 
-    return `Success: Todo with key ${key} updated.`;
+    return { updatedTodo: todos[todoItemIdx] };
 };
 
 const toggleTodo = (key) => {
@@ -63,7 +63,13 @@ const toggleTodo = (key) => {
     todos[todoItemIdx].active = !todos[todoItemIdx].active;
     setTodos();
 
-    return `Success: Todo with key ${key} toggled.`;
+    console.log(
+        "OK: Todo with " +
+            key +
+            " toggled and current status is: " +
+            todos[todoItemIdx].active
+    );
+    return { toggledTodo: todos[todoItemIdx] };
 };
 
 const deleteTodo = (key) => {
@@ -77,7 +83,7 @@ const deleteTodo = (key) => {
     todos.splice(todoItemIdx, 1);
     setTodos();
 
-    return `Success: Todo with key ${key} deleted.`;
+    return { deletedTodoKey: key };
 };
 
 module.exports = { getTodos, addTodo, updateTodo, toggleTodo, deleteTodo };

@@ -67,7 +67,10 @@ function UpdateTodo(props) {
                     </Button>
                     <Button
                         variant="primary"
-                        onClick={() => props.onSubmit(newTitle, newDescription)}
+                        onClick={() =>
+                            //key can't be used as a prop so using id instead
+                            props.onSubmit(props.id, newTitle, newDescription)
+                        }
                     >
                         Update
                     </Button>

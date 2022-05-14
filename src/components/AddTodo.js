@@ -24,6 +24,8 @@ export default function AddTodo(props) {
         }
 
         props.onAdd(title, description);
+        setTitle("");
+        setDescription("");
     };
 
     return (

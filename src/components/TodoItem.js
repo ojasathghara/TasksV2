@@ -35,13 +35,13 @@ function TodoItem(props) {
                     </Button>
                     <Button
                         variant="success"
-                        onClick={() => props.onToggle(props.todo)}
+                        onClick={() => props.onToggle(props.todo.key)}
                     >
                         {props.todo.active ? "Mark as Done" : "Not done yet"}
                     </Button>
                     <Button
                         variant="danger"
-                        onClick={() => props.onDelete(props.todo)}
+                        onClick={() => props.onDelete(props.todo.key)}
                     >
                         Delete
                     </Button>
