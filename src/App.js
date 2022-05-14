@@ -8,7 +8,7 @@ import About from "./components/static/About";
 let apiUrl = "";
 
 function App() {
-    switch (process.REACT_APP_BUILD) {
+    switch (process.env.REACT_APP_BUILD) {
         case "production":
             apiUrl = "https://peaceful-island-64307.herokuapp.com";
             break;
