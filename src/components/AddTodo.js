@@ -47,8 +47,11 @@ export default function AddTodo(props) {
                 </div>
                 <br />
                 <div className="form-group">
+                    {/* style added to display new lines properly */}
                     <label htmlFor="description">Description</label>
-                    <input
+                    <textarea
+                        style={{ whiteSpace: "pre-line" }}
+                        rows={4}
                         type="text"
                         className="form-control"
                         id="description"
@@ -56,7 +59,7 @@ export default function AddTodo(props) {
                         placeholder="Enter a description"
                         value={description}
                         onChange={onDescriptionChange}
-                    />
+                    ></textarea>
                 </div>
                 <br />
                 <div className="form-group ml-auto">

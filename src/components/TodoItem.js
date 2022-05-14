@@ -21,7 +21,10 @@ function TodoItem(props) {
                 <hr />
                 <p
                     className="card-text"
-                    style={props.todo.active ? normalText : strikeText}
+                    style={Object.assign(
+                        props.todo.active ? normalText : strikeText,
+                        { whiteSpace: "pre-line" }
+                    )}
                 >
                     {props.todo.description}
                 </p>

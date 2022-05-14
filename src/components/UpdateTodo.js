@@ -50,14 +50,15 @@ function UpdateTodo(props) {
                             <label htmlFor="todoDescriptionUpdate">
                                 New Description
                             </label>
-                            <input
+                            <textarea
+                                rows={4}
                                 type="text"
                                 className="form-control"
                                 id="todoDescriptionUpdate"
                                 name="todoDescriptionUpdate"
                                 value={newDescription}
                                 onChange={onDescriptionChange}
-                            />
+                            ></textarea>
                         </div>
                     </form>
                 </Modal.Body>
